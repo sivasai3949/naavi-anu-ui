@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9; /* Light grey background for the entire page */
+  margin: 0;
+  padding: 0;
+}
+
+/* Chatbot Container */
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh; /* Full viewport height */
+  max-width: 1000px; /* Max width for the chat container */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  background-color: #fff; /* White background for the chatbot */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow effect */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between; /* Space between logo and robot icon */
+  width: 100%;
+  margin-bottom: 20px; /* Space below the header */
+}
+
+/* Logos */
+.logo-icon {
+  width: 120px; /* Fixed width for the logo */
+}
+
+.robot-icon {
+  width: 50px; /* Fixed width for the robot icon */
+}
+
+/* Chat Container */
+.chat-container {
+  flex: 1; /* Allow chat container to grow */
+  width: 100%; /* Full width */
+  overflow-y: auto; /* Scrollable if content overflows */
+  padding: 10px;
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light grey background for chat area */
+}
+
+/* Chat Bubbles */
+.chat-bubble {
+  max-width: 80%; /* Max width for chat bubbles */
+  padding: 10px; /* Padding inside chat bubbles */
+  margin-bottom: 10px; /* Space between bubbles */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px; /* Font size for messages */
+  line-height: 1.4; /* Line height for readability */
+}
+
+/* User Chat Bubble */
+.user-bubble {
+  align-self: flex-end; /* Align user bubble to the right */
+  background-color: #0084ff; /* Blue background for user messages */
+  color: #fff; /* White text color */
+}
+
+/* Robot Chat Bubble */
+.robot-bubble {
+  align-self: flex-start; /* Align robot bubble to the left */
+  background-color: #e5e5ea; /* Light grey background for robot messages */
+  color: #000; /* Black text color */
+}
+
+/* Input Area */
+.input-container {
+  display: flex; /* Flex container for input and button */
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Space above input area */
+}
+
+/* User Input */
+#user-input {
+  flex: 1; /* Allow input to grow */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 20px 0 0 20px; /* Rounded corners on left */
+  outline: none; /* Remove default outline */
+}
+
+/* Send Button */
+#send-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none; /* Remove border */
+  background-color: #0084ff; /* Blue background */
+  color: #fff; /* White text */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 0 20px 20px 0; /* Rounded corners on right */
+}
+
+/* Send Button Hover Effect */
+#send-btn:hover {
+  background-color: #005bb5; /* Darker blue on hover */
+}
+
+/* Generate Pathways Button */
+#generate-pathways-btn {
+  padding: 10px 20px;
+  margin-top: 10px; /* Space above the button */
+  border: none; /* Remove border */
+  background-color: #28a745; /* Green background */
+  color: #fff; /* White text */
+  font-size: 16px; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 20px; /* Rounded corners */
+}
+
+/* Generate Pathways Button Hover Effect */
+#generate-pathways-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Loading Indicator */
+#loading-indicator {
+  display: flex; /* Display loading indicator */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 16px; /* Font size for loading text */
+  margin-top: 10px; /* Space above loading text */
+  color: #888; /* Grey color for loading text */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .chatbot-container {
+      width: 90%; /* Take 90% width on smaller screens */
+      padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .chat-bubble {
+      font-size: 14px; /* Smaller font size for chat bubbles */
+  }
+
+  #user-input, #send-btn, #generate-pathways-btn {
+      font-size: 14px; /* Smaller font size for inputs and buttons */
+  }
+}
