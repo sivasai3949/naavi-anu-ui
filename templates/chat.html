@@ -3,34 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAAVI-AI</title>
+    <title>Naavi</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="icon" href="/static/favicon.jpg" type="image/x-icon">
 </head>
 <body>
-    <div class="chatbot-container">
-        <header>
-            <img src="/static/nav_logo.svg" alt="logo Icon" class="logo-icon">
-            <img src="/static/chatbot4.gif" alt="Robot Icon" class="robot-icon">
-        </header>
-        <div class="chat-container" id="chat-container">
-            {% if intro_message %}
-                <div class="chat">
-                    <div class="chat-bubble robot">{{ intro_message }}</div>
-                </div>
-            {% endif %}
-        </div>
-        <div class="input-container" id="input-container">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button id="send-btn">Send</button>
-        </div>
-        <div class="pathway-container" id="pathway-container">
-            <button id="pathway-btn" style="display: none;">Create a Pathway</button>
-        </div>
+    <div class="logo-container">
+        <img src="/static/nav_logo.svg" alt="logo Icon" class="logo-icon">
+        <p>The search engine for pathway generation</p>
     </div>
+    <main>
+        <h2>For crafting a personalized education plan, please summarize your background, educational milestones, aspirations, higher education ambitions, and financial considerations.</h2>
+        
+        <!-- Introductory message -->
+        <div class="intro-message-container">
+            <div class="intro-bubble">{{ intro_message }}</div>
+        </div>
 
-    <!-- Confetti library -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+        <!-- Chat container -->
+        <div id="chat-container" class="chat-container">
+            <!-- Chat bubbles will be appended here -->
+        </div>
+
+        <!-- User input form -->
+        <form id="chat-form" class="user-input-form">
+            <div class="input-container">
+                <textarea id="user-input" placeholder="Ask your question" rows="4"></textarea>
+                <button id="send-btn">Send</button>
+            </div>
+        </form>
+        
+
+        <!-- Pathway button -->
+        <button id="pathway-btn">Create Pathway</button>
+    </main>
     <script src="/static/script.js"></script>
 </body>
 </html>

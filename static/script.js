@@ -4,7 +4,7 @@ document.getElementById('send-btn').addEventListener('click', function(event) {
 });
 
 document.getElementById('user-input').addEventListener('keypress', function(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && !event.shiftKey) {
         event.preventDefault();
         sendUserInput();
     }
@@ -43,7 +43,7 @@ function sendUserInput() {
                 appendChat("robot", data.question);
             }
             if (data.show_pathway_button) {
-                document.getElementById('pathway-btn').style.display = 'block';
+                document.getElementById('pathway-btn').classList.remove('hidden');
             }
         }
     })
@@ -61,7 +61,7 @@ function appendChat(role, message) {
     var chatContainer = document.getElementById('chat-container');
     var chatBubble = document.createElement('div');
     chatBubble.classList.add('chat-bubble');
-    chatBubble.classList.add(role + '-bubble'); // Use role-bubble class instead of just role
+    chatBubble.classList.add(role + '-bubble');
     chatBubble.innerText = message;
 
     chatContainer.appendChild(chatBubble);
@@ -73,7 +73,7 @@ function showLoading() {
     var chatContainer = document.getElementById('chat-container');
     var loadingIndicator = document.createElement('div');
     loadingIndicator.id = 'loading-indicator';
-    loadingIndicator.classList.add('chat-bubble', 'robot-bubble'); // Use robot-bubble class
+    loadingIndicator.classList.add('chat-bubble', 'robot-bubble');
     loadingIndicator.innerText = '...'; // Loading dots
     chatContainer.appendChild(loadingIndicator);
     chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom of chat

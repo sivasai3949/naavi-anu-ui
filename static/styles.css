@@ -1,150 +1,205 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9; /* Light grey background for the entire page */
   margin: 0;
   padding: 0;
+  background-color: #fff;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-/* Chatbot Container */
-.chatbot-container {
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #f7f4f4;
+  color: #075cf9;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+main {
+  padding: 8rem; /* Adjust padding as needed */
+  text-align: center;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  color: #020568;
+  font-style: italic;
+}
+
+/* Introductory message styling */
+.intro-message-container {
+  display: flex;
+  justify-content: center; /* Center the intro message */
+  margin-bottom: 0px; /* Space below introductory message */
+}
+
+.intro-bubble {
+  background-color: #69cff7;
+  text-align: left;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 50%;
+  max-width: 600px; /* Set a maximum width for consistency */
+  overflow: auto;
+  resize: none; /* Ensure it is not resizable */
+}
+
+/* Chat container styling */
+.chat-container {
+  max-width: 600px;
+  margin: 0 auto; /* Center the chat container */
+  padding: 0; /* No padding to prevent wrapping */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove shadow */
+  overflow: auto; /* Allow scrolling */
+}
+
+/* Chat bubbles styling */
+.chat-bubble {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 20px;
+  max-width: 100%;
+  overflow: auto;
+  display: inline-block; /* Allow bubbles to be on the same line if needed */
+  vertical-align: top; /* Align bubbles at the top */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Apply resizable feature only to chatbot responses */
+.robot-bubble {
+  background-color: #e0e0e0;
+  text-align: left;
+  overflow: auto;
+  display: block; /* Ensure it takes a new line */
+}
+
+.user-bubble {
+  background-color: #4a90e2;
+  color: #fff;
+  text-align: left;
+  resize: vertical; /* Allow resizing */
+  overflow: auto;
+  display: block; /* Ensure it takes a new line */
+  border-radius: 20px; /* Smooth rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Form styling for user input */
+.user-input-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 90vh; /* Full viewport height */
-  max-width: 1000px; /* Max width for the chat container */
-  margin: 0 auto; /* Center horizontally */
-  padding: 20px;
-  background-color: #fff; /* White background for the chatbot */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow effect */
-  border-radius: 8px; /* Rounded corners */
+  margin-top: 20px;
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between; /* Space between logo and robot icon */
-  width: 100%;
-  margin-bottom: 20px; /* Space below the header */
-}
-
-/* Logos */
-.logo-icon {
-  width: 120px; /* Fixed width for the logo */
-}
-
-.robot-icon {
-  width: 50px; /* Fixed width for the robot icon */
-}
-
-/* Chat Container */
-.chat-container {
-  flex: 1; /* Allow chat container to grow */
-  width: 100%; /* Full width */
-  overflow-y: auto; /* Scrollable if content overflows */
-  padding: 10px;
-  border: 1px solid #ddd; /* Light grey border */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light grey background for chat area */
-}
-
-/* Chat Bubbles */
-.chat-bubble {
-  max-width: 80%; /* Max width for chat bubbles */
-  padding: 10px; /* Padding inside chat bubbles */
-  margin-bottom: 10px; /* Space between bubbles */
-  border-radius: 20px; /* Rounded corners */
-  font-size: 16px; /* Font size for messages */
-  line-height: 1.4; /* Line height for readability */
-}
-
-/* User Chat Bubble */
-.user-bubble {
-  align-self: flex-end; /* Align user bubble to the right */
-  background-color: #0084ff; /* Blue background for user messages */
-  color: #fff; /* White text color */
-}
-
-/* Robot Chat Bubble */
-.robot-bubble {
-  align-self: flex-start; /* Align robot bubble to the left */
-  background-color: #e5e5ea; /* Light grey background for robot messages */
-  color: #000; /* Black text color */
-}
-
-/* Input Area */
+/* Input container styling */
 .input-container {
-  display: flex; /* Flex container for input and button */
-  width: 100%; /* Full width */
-  margin-top: 10px; /* Space above input area */
+  position: relative;
+  width: 100%;
+  max-width: 600px;
 }
 
-/* User Input */
-#user-input {
-  flex: 1; /* Allow input to grow */
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd; /* Light grey border */
-  border-radius: 20px 0 0 20px; /* Rounded corners on left */
-  outline: none; /* Remove default outline */
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 50px;
+  padding: 10px; /* Adjust padding to fit design */
+  border: 2px solid #4a90e2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  resize: none; /* Ensure it is not resizable */
+  line-height: 1.5; /* Ensure vertical centering */
+  text-align: left; /* Align text to the left */
 }
 
-/* Send Button */
+textarea::placeholder {
+  color: #999; /* Placeholder text color */
+  padding-top: 5px;
+}
+
+textarea:focus {
+  border-color: #357ab8;
+}
+
+/* Button inside the input container */
 #send-btn {
+  position: absolute;
+  right: 5px;
+  top: 39%;
+  transform: translateY(-50%);
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
   padding: 10px 20px;
-  font-size: 16px;
-  border: none; /* Remove border */
-  background-color: #0084ff; /* Blue background */
-  color: #fff; /* White text */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 0 20px 20px 0; /* Rounded corners on right */
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* Send Button Hover Effect */
 #send-btn:hover {
-  background-color: #005bb5; /* Darker blue on hover */
+  background-color: #357ab8;
 }
 
-/* Generate Pathways Button */
-#generate-pathways-btn {
+/* Ensure visibility of the "Create Pathway" button */
+#pathway-btn {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
   padding: 10px 20px;
-  margin-top: 10px; /* Space above the button */
-  border: none; /* Remove border */
-  background-color: #28a745; /* Green background */
-  color: #fff; /* White text */
-  font-size: 16px; /* Font size for button */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px; /* Ensure some space above */
+  display: block; /* Center button and add space above */
+  margin: 20px auto; /* Center button horizontally */
+  font-size: medium;
 }
 
-/* Generate Pathways Button Hover Effect */
-#generate-pathways-btn:hover {
-  background-color: #218838; /* Darker green on hover */
+.hidden {
+  display: none;
 }
 
-/* Loading Indicator */
-#loading-indicator {
-  display: flex; /* Display loading indicator */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  font-size: 16px; /* Font size for loading text */
-  margin-top: 10px; /* Space above loading text */
-  color: #888; /* Grey color for loading text */
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .chatbot-container {
-      width: 90%; /* Take 90% width on smaller screens */
-      padding: 10px; /* Reduce padding on smaller screens */
-  }
+.logo-icon {
+  height: 50px;
+  margin-right: 10px;
+}
 
-  .chat-bubble {
-      font-size: 14px; /* Smaller font size for chat bubbles */
-  }
+.logo-container p {
+  color: #075cf9;
+  position: relative;
+  top: 3rem;
+  right: 12rem;
+  font-style: italic;
+}
 
-  #user-input, #send-btn, #generate-pathways-btn {
-      font-size: 14px; /* Smaller font size for inputs and buttons */
-  }
+/* For pathway results container */
+.pathway-content {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: auto; /* Allows scrolling */
 }

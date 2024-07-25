@@ -31,9 +31,9 @@ app.add_middleware(SessionMiddleware, secret_key=SECRET_KEY)
 
 # Initial questions
 questions = [
-    "To gain further understanding, can you please describe your educational experience?",
-    "What are your aspirations and higher education goals (e.g., want to study abroad or at elite universities)?",
-    "Please describe if there are any financial constraints?"
+    "Can you briefly describe your current academic journey, including any notable achievements?",
+    "Are there specific fields of study or professions you are passionate about? Where do you see yourself in five years, academically or professionally?",
+    "What extracurricular activities or hobbies do you enjoy that align with your academic interests?"
 ]
 
 @app.get("/", response_class=HTMLResponse)
